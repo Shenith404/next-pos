@@ -15,7 +15,7 @@ export function middleware(request: NextRequest) {
 
   // allow access to the root route
   if (pathname === "/") {
-    return NextResponse.next();
+    return NextResponse.redirect(new URL("/dashboard/home", request.url));
   }
 
   // Redirect authenticated users trying to access unauthenticated routes
